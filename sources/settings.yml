@@ -1,0 +1,31 @@
+---
+strategy: polling
+no_screen_padding: 'no'
+dark_mode: 'no'
+static_data: ''
+polling_verb: get
+framework_version: 2.3.7
+serverless_language: ''
+polling_url: https://api.trakt.tv/movies/trending?page=1&limit=10&extended=full,images
+polling_headers: Content-Type=application/json&trakt-api-key={{ trakttvclientid }}&trakt-api-version=2&User-Agent=TRMNL-SPRAVODAJ-v2&Authorization=Bearer%20{{ oauth_access_token }}
+polling_body: ''
+id: 270696
+custom_fields:
+- keyname: author_bio
+  field_type: author_bio
+  name: spravodaj.madaj.net
+- keyname: trakttvclientid
+  field_type: text
+  name: Client ID
+- keyname: fulltype
+  field_type: select
+  name: Full screen movie layout
+  default: 3x3
+  optional: true
+  options:
+  - SIMPLE
+  - 3x3
+  - 1x1
+  - TYPO
+name: TRAKT.TV TRENDING MOVIES [RC]
+refresh_interval: 60

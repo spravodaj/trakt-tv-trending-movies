@@ -1,0 +1,55 @@
+<style>
+  .sxcreen, .xview { background: black; }
+  .bolder { font-weight: 600; }
+  #p0t p { margin: 0; padding: 0; }
+  #p0t .row { margin: 0; padding: 0; }
+  .small { font-size: 13px; }
+  .large { font-size: 36px; }
+  .opacity { }
+</style>
+
+    {% assign total_images = 8 %}
+    {% assign interval = 24 | divided_by: total_images %}
+    {% assign current_hour = today | date: "%H" | plus: 0 %}
+    {% assign image_index = current_hour | divided_by: interval %}
+
+
+    {% assign timestamp_seconds = trmnl.system.timestamp_utc %}
+    {% assign local_timestamp = timestamp_seconds | plus: trmnl.user.utc_offset %}
+    {% assign two_hours_ago = local_timestamp | minus: 7200 %}
+    
+    {% assign row_counter = 0 %}
+    {% assign last_date = "31.02." %}
+
+    {% for item in data %}
+      {% assign current_item_name = item.movie.title %}
+	  
+	  {% if row_counter == image_index %}
+<div id="p0t" class="layout layout--col layout--top m--0 rounded--small bg--black " style="xborder-radius:12px; background: url(https://{{ item.movie.images.fanart }}) no-repeat center / cover;">
+      <div class="flex flex--col h--full w-full">
+          <div class="item w--full">
+            <div class="h--8 md:h--12 lg:h--24"><img class="image image-dither image--contain" src="https://{{ item.movie.images.logo }}" style="width:100%;max-height:54px;" /></div>
+            <div class="stretch"></div>
+            <div class="h--8 md:h--12 lg:h--24"><img class="" src="https://trakt.tv/assets/logos/logomark.square.black-a4f374d2b6b9c50d75e74c2c1cefc7e7f1b8974d25e7840baa2f491cf54cefc1.svg" height="24" style="vertical-align:middle;" /></div>
+          </div>
+         <div class="item stretch"></div>
+          <div class="xitem w--full rounded--xsmall p--2 bg--white opacity grid grid--cols-9">
+            <div class="col col--span-1"><p class="font large">{{ image_index | plus: 1 }}</p></div>
+            <div class="col col--span-8">
+              <div class="row w--full flex">
+                <p class="font stretch"><span class="bolder">{{ current_item_name }}</span></p>
+              </div>
+              <div class="row w--full"><p class="font small">{{ item.movie.released | date: "%d.%m.%y" }} {{ item.movie.genres[0] }} {{ item.movie.genres[1] }}</p></div>
+              <div class="row w--full"><p class="font small">{{ item.movie.tagline }}</p></div>
+              <div class="row w--full"><p class="font small">{{ item.movie.overview }}<!--  [{{ today | date: "%H.%M" }}] --></p></div>
+            </div>
+          </div>    
+      </div>
+</div>
+      {% endif %}
+	  
+      {% assign row_counter = row_counter | plus: 1 %}
+    {% endfor %}
+
+    
+  

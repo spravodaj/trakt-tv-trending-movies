@@ -1,0 +1,38 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap" rel="stylesheet">
+
+
+
+<style>
+  #p0t .font { font-family: "Google Sans Flex"; }
+  #p0t .bold { font-weight: 600; }
+</style>
+
+<style>
+  #p0t .rmlabel { display:inline-block; border-radius: 4px; padding: 0.1em 0.4em; font-family: 'Arial', sans-serif !important; 
+          letter-spacing: 0.4px; font-size: 1em; font-weight: 500; margin:0; border:2px solid #000000;
+            line-height: 1em; font-weight: 600; min-width: 4em; text-align: center;
+            xwidth: 100%;
+         }
+  #p0t .rmlabel.inverted { background: #000000; color: #ffffff; padding: 0.1em 0.4em; border:2px solid #000000; font-weight: 600; }
+  #p0t .rmlabel.plain { border: 2px solid transparent; padding: 0.1em 0; font-weight: 600; }
+  #p0t .rmlabel.small { font-size: 0.8em; border-radius: 4px; }
+  #p0t .rmlabel.medium { font-size: 1em; border-radius: 5px; }
+  #p0t .rmlabel.large { font-size: 1.3em; border-radius: 6px; }
+  #p0t .rmlabel.xlarge { font-size: 1.6em; border-radius: 7px; }
+  #p0t .rmlabel.xxlarge { font-size: 2em; border-radius: 8px; }
+  #p0t .rmlabel.xxxlarge { font-size: 3em; border-radius: 8px; }
+  #p0t .rmlabel.left { text-align: left; }
+  #p0t sup, #p0t sub {
+  vertical-align: baseline;
+  xposition: relative; 
+  xtop: calc(-0.5 * 0.83 * 2 * (1em - 4px)); 
+  }
+#p0t sub {
+  xtop: calc(0.25 * 0.83 * 2 * (1em - 4px)); 
+  /* Simplified top: calc(0.42em - 1.66px) */
+}
+</style>
+
+   {% assign today = trmnl.system.timestamp_utc | plus: trmnl.user.utc_offset %}
