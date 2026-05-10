@@ -4,7 +4,7 @@
 <p>View trending movies from TRAKT.TV using the official API.</p>
 <p>Trakt.tv API: <a href="https://trakt.docs.apiary.io/#">link</a></p>
 
-<p>Obtain your OAuth2.0 credentials in your Trakt account</p>
+<p>Obtain your OAuth2.0 credentials in your Trakt account https://trakt.tv/oauth/applications</p>
 
 <p>To obtain your OAuth2.0 credentials:</p>
 
