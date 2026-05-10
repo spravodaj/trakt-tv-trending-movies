@@ -12,7 +12,7 @@
 - Click on Applications or your API applications section.
 - Click the button to create a new API app.
 - Enter your application details as prompted.
-- Enter the callback URI: https://www.integromat.com/oauth/cb/trakt-tv2.
+- Enter the callback URI:
 - Submit the form to create your application.
 - Copy the Client ID displayed on screen.
 - Copy the Client secret displayed on screen.
